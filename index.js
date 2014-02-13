@@ -33,8 +33,7 @@ exports.register = function (plugin, options, next) {
             config.cache = {
                 expiresIn: clientApp.getConfig('cachePeriod')
             };
-            extendedConfig.cache = extendedConfig.cache || {};
-            extendedConfig.cache.expiresIn = clientApp.getConfig('cachePeriod');
+            extendedConfig.cache = extendedConfig.cache;
         }
         clientApp.on('ready', function () {
             servers.route({
